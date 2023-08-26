@@ -14,7 +14,9 @@ pipeline {
         }
         stage ('Deploy'){
             steps {
+                sh '''
                 docker run -d -p 80:8080 --name flask-webapp anas1243/simple-webapp-flask
+                '''
             }
         }
     }
